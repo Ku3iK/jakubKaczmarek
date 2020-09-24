@@ -12,8 +12,8 @@ const Form = () => {
         <h2>Napisz do mnie!</h2>
         <div className="contactImage"></div>
         <form name="contact" method="POST" data-netlify="true" action="/succes">
-          <input type="text" placeholder="Email" />
-          <input type="email" placeholder="Temat" />
+          <input type="text" name="title" placeholder="Tytuł" />
+          <input type="email" name="email" placeholder="Email" />
           <textarea
             name="content"
             id="content"
