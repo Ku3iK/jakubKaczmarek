@@ -11,7 +11,7 @@ const Form = () => {
         <p>Jeśli interesuje Cię współpraca</p>
         <h2>Napisz do mnie!</h2>
         <div className="contactImage"></div>
-        <form name="contact" method="POST" data-netlify="true" action="/succes">
+        <form name="contact" method="POST" data-netlify="true">
           <div>
             <input type="text" name="title" id="title" placeholder="Tytuł" />
           </div>
