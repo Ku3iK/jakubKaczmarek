@@ -25,8 +25,7 @@ const Form = () => {
               placeholder="Twoja wiadomość..."
             ></textarea>
           </div>
-
-          <button>Wyślij</button>
+          <button type="submit">Wyślij</button>
         </form>
       </div>
       <div className="contactImage"></div>
