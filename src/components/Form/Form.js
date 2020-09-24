@@ -13,7 +13,7 @@ const Form = () => {
         <div className="contactImage"></div>
         <form name="contact" method="POST" data-netlify="true" action="/succes">
           <input type="text" placeholder="Email" />
-          <input type="mail" placeholder="Temat" />
+          <input type="email" placeholder="Temat" />
           <textarea
             name="content"
             id="content"
