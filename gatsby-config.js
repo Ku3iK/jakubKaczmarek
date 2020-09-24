@@ -51,7 +51,7 @@ module.exports = {
         fonts: [
           {
             family: `Lato`,
-            variants: [`300`, `500`, `700`, `900`],
+            variants: [`300`, `400`, `700`, `900`],
             subsets: [`latin-ext`],
           },
         ],
