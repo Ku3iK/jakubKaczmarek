@@ -16,11 +16,11 @@ const Navigation = ({ routes }) => {
           <h1>Kaczmarek</h1>
         </Link>
       </div>
-      <div>
+      <div className="navElements">
         <ul>
           {routes.map(({ icon, path }, index) => (
             <li key={index}>
-              <Link to={path}>
+              <Link to={path} target="_blank">
                 <img className="navigationIcon" src={icon} alt="Ikona" />
               </Link>
             </li>
@@ -34,21 +34,23 @@ const Navigation = ({ routes }) => {
 
 export default Navigation
 
-const Container = styled.main`
+const Container = styled.section`
   display: flex;
   justify-content: space-between;
-
+  margin: 20px auto;
+  background-color: transparent;
+  max-width: 1600px;
   .logoContainer {
     a {
       display: flex;
       align-items: center;
     }
     .logoIcon {
-      width: 100px;
+      width: 50px;
     }
   }
 
-  div {
+  .navElements {
     display: flex;
     align-items: center;
     ul {
@@ -61,9 +63,41 @@ const Container = styled.main`
         margin: 0 20px;
       }
     }
+    button {
+      background-color: transparent;
+      background-image: none;
+      border: 2px solid ${({ theme }) => theme.color.text};
+    }
     button:hover {
       background-color: ${({ theme }) => theme.color.text};
       color: ${({ theme }) => theme.color.background};
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 80%;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallDesktop}) {
+    align-items: flex-start;
+    .navElements ul {
+      flex-direction: column;
+      li {
+        padding: 5px 0;
+      }
+    }
+    button {
+      display: none;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    width: 100%;
+    .navElements {
+      width: 100%;
+      ul {
+        flex-direction: row;
+        justify-content: center;
+        margin: 1.2rem auto;
+      }
     }
   }
 `
