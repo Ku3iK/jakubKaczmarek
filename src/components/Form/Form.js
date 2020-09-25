@@ -12,6 +12,7 @@ const Form = () => {
         <h2>Napisz do mnie!</h2>
         <div className="contactImage"></div>
         <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-hidden" value="contact" />
           <input type="text" name="title" id="title" placeholder="Tytuł" />
           <input type="email" name="email" id="email" placeholder="Email" />
           <textarea
