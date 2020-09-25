@@ -9,7 +9,7 @@ const Header = () => {
       <img src={BannerBackground} alt="Banner background" />
       <div>
         <h2>Cześć, tu Kuba!</h2>
-        <p>
+        <p className="aboutMe">
           Jestem młodym kreatywnym chłopakiem z pasją do tego, czym się zajmuje.
           Specjalizuję się w tworzeniu aplikacji webowych dla klientów, osób
           prywatnych i firm. Chętnie podejmuję się "niemożliwego" i zrobię
@@ -30,8 +30,7 @@ const HeaderContainer = styled.section`
   justify-content: space-between;
   align-items: center;
   height: 800px;
-  width: 100%;
-  margin: 0 auto;
+  margin: 10rem auto;
   max-width: 1600px;
   img {
     position: absolute;
@@ -61,7 +60,6 @@ const HeaderContainer = styled.section`
     height: 50vh;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    width: 90%;
     img {
       top: -5%;
       right: -15%;
@@ -70,7 +68,6 @@ const HeaderContainer = styled.section`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallDesktop}) {
     flex-direction: column;
-    width: 80%;
     img {
       display: none;
     }
@@ -89,7 +86,13 @@ const HeaderContainer = styled.section`
     }
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 90%;
+    p {
+      /* text-align: justify; */
+      padding: 0;
+      width: 100%;
+      margin: 0;
+      font-size: ${({ theme }) => theme.font.footerParagraph};
+    }
     div:nth-of-type(2) {
       width: 70vw;
     }
