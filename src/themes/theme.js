@@ -6,6 +6,7 @@ export default {
     text: "#DDDDDD",
     background: "#333333",
     inputsColor: "#444444",
+    black: "#000000",
   },
   font: {
     xl: "4rem",
@@ -14,6 +15,7 @@ export default {
     s: "2.3rem",
     xs: "1.8rem",
     xxs: "1.2rem",
+    footerParagraph: "2rem",
     black: 900,
     bold: 700,
     medium: 400,
