@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import LogoIcon from "../../assets/icons/logo.svg"
+import NavElements from "./NavElements"
 
 const Navigation = ({ routes }) => {
   return (
@@ -17,15 +18,7 @@ const Navigation = ({ routes }) => {
         </Link>
       </div>
       <div className="navElements">
-        <ul>
-          {routes.map(({ icon, path }, index) => (
-            <li key={index}>
-              <Link to={path} target="_blank">
-                <img className="navigationIcon" src={icon} alt="Ikona" />
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <NavElements routes={routes} />
         <button>Kontakt</button>
       </div>
     </Container>
@@ -74,7 +67,6 @@ const Container = styled.section`
     }
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    width: 80%;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.smallDesktop}) {
     align-items: flex-start;
@@ -91,6 +83,11 @@ const Container = styled.section`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
     width: 100%;
+    .logoContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
     .navElements {
       width: 100%;
       ul {
