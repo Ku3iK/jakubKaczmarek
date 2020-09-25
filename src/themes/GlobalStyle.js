@@ -10,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
+    *:focus {
+        outline: 1px solid ${({ theme }) => theme.color.primary};
+    }
+        
     body {
         font-size: 1.6rem;
         font-family: ${({ theme }) => theme.font.name};
@@ -26,17 +31,32 @@ const GlobalStyle = createGlobalStyle`
         font-size: ${({ theme }) => theme.font.xl};
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-weight: 900;
+        font-weight: ${({ theme }) => theme.font.black};
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+            font-size: ${({ theme }) => theme.font.m};
+        }
     }
 
     h2 {
         font-size: ${({ theme }) => theme.font.l};
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-weight: 700;
+        font-weight: ${({ theme }) => theme.font.bold};
         @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        font-size: ${({ theme }) => theme.font.m};
-      }
+            font-size: ${({ theme }) => theme.font.m};
+        }
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+            font-size: ${({ theme }) => theme.font.s};
+        }
+    }
+
+    h3 {
+        font-size: ${({ theme }) => theme.font.l};
+        text-transform: uppercase;
+        font-weight: ${({ theme }) => theme.font.medium};
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+            font-size: ${({ theme }) => theme.font.s};
+        }
     }
 
     ul {
@@ -51,16 +71,16 @@ const GlobalStyle = createGlobalStyle`
     p {
       width: 90%;
       font-size: ${({ theme }) => theme.font.m};
-      margin: 40px 0;
-      font-weight: 300;
-      line-height: 45px;
+      margin: 4rem 0;
+      font-weight: ${({ theme }) => theme.font.thin};
+      line-height: 4.5rem;
       @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
         font-size: ${({ theme }) => theme.font.s};
-        line-height: 35px;
+        line-height: 3.5rem;
       }
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: ${({ theme }) => theme.font.xs};
-        line-height: 25px;
+        line-height: 2.5rem;
       }
     }
 
@@ -70,11 +90,11 @@ const GlobalStyle = createGlobalStyle`
         font-size: ${({ theme }) => theme.font.s};
         border: none;
         background-image: linear-gradient(-45deg, #40a829, #006241);
-        border-radius: 25px;
-        padding: 10px 30px;
+        border-radius: 2.5rem;
+        padding: 1rem 3rem;
         transition: .3s;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: ${({ theme }) => theme.font.bold};
         letter-spacing: 1px;
         cursor: pointer;
         @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -88,9 +108,15 @@ const GlobalStyle = createGlobalStyle`
     }
 
     section {
-        margin: 150px auto;
+        margin: 20rem auto;
+        width: 100%;
+        @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+            width: 90%;
+        }
         @media (max-width: ${({ theme }) => theme.breakpoints.smallDesktop}) {
+            width: 80%;
             padding: 0 2rem;
+            margin: 10rem auto;
         }
     }
 
@@ -99,7 +125,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .navigationIcon {
-        width: 30px;
+        width: 3rem;
     }
     
 `
