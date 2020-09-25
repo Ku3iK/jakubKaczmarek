@@ -12,19 +12,13 @@ const Form = () => {
         <h2>Napisz do mnie!</h2>
         <div className="contactImage"></div>
         <form name="contact" method="POST" data-netlify="true">
-          <div>
-            <input type="text" name="title" id="title" placeholder="Tytuł" />
-          </div>
-          <div>
-            <input type="mail" name="mail" id="mail" placeholder="Email" />
-          </div>
-          <div>
-            <textarea
-              name="content"
-              id="content"
-              placeholder="Twoja wiadomość..."
-            ></textarea>
-          </div>
+          <input type="text" name="title" id="title" placeholder="Tytuł" />
+          <input type="mail" name="mail" id="mail" placeholder="Email" />
+          <textarea
+            name="content"
+            id="content"
+            placeholder="Twoja wiadomość..."
+          ></textarea>
           <button type="submit">Wyślij</button>
         </form>
       </div>
@@ -58,9 +52,6 @@ const FormWrapper = styled.section`
     }
     form {
       width: 100%;
-      div {
-        width: 100%;
-      }
       input,
       textarea {
         display: block;
