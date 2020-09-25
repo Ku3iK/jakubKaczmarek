@@ -91,7 +91,7 @@ const FormWrapper = styled.section`
       display: none;
     }
     div {
-      width: 80%;
+      width: 100%;
       flex-basis: auto;
     }
     .contactImage {
@@ -105,7 +105,7 @@ const FormWrapper = styled.section`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     div {
-      width: 90%;
+      width: 100%;
       form {
         display: flex;
         flex-direction: column;
